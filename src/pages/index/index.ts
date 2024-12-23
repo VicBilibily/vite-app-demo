@@ -1,30 +1,38 @@
-import { hello } from '@/utils/util'
+import { hello } from "@/utils/util";
 
-Page({
+import { ComponentWithComputed } from "miniprogram-computed";
+
+ComponentWithComputed({
   data: {
-    mode: 'light',
+    mode: "light",
   },
-  switchMode() {
-    if (this.data.mode === 'light') {
-      this.setData({
-        mode: 'dark',
-      })
-    }
-    else {
-      this.setData({
-        mode: 'light',
-      })
-    }
+  computed: {
+    theme(data: { mode: string }) {
+      return data.mode === "light" ? "light" : "dark";
+    },
   },
-  async copy(e: WechatMiniprogram.BaseEvent) {
-    if (e.mark?.url) {
-      await wx.setClipboardData({
-        data: e.mark.url,
-      })
-      console.log(`复制成功: ${e.mark.url}`)
-    }
+  methods: {
+    switchMode() {
+      if (this.data.mode === "light") {
+        this.setData({
+          mode: "dark",
+        });
+      } else {
+        this.setData({
+          mode: "light",
+        });
+      }
+    },
+    async copy(e: WechatMiniprogram.BaseEvent) {
+      if (e.mark?.url) {
+        await wx.setClipboardData({
+          data: e.mark.url,
+        });
+        console.log(`复制成功: ${e.mark.url}`);
+      }
+    },
+    onLoad() {
+      console.log(hello());
+    },
   },
-  onLoad() {
-    console.log(hello())
-  },
-})
+});

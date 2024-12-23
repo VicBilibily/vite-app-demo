@@ -8,13 +8,14 @@
     <view class="bg-gradient-to-r from-green-400 to-sky-400 bg-clip-text text-xl font-extrabold text-transparent underline">
       weapp-vite & weapp-tailwindcss
     </view>
-    <view class="{{ mode === 'light' ? 'i-mdi-moon-waxing-crescent':'i-mdi-weather-sunny text-white' }} text-8xl" bind:tap="switchMode"></view>
+    <view class="{{ mode === 'light' ? 'i-mdi-moon-waxing-crescent':'i-mdi-weather-sunny text-white' }} text-8xl" capture-bind:tap="switchMode"></view>
     <view class="underline" mark:url="https://vite.icebreaker.top" bind:tap="copy">
       https://vite.icebreaker.top
     </view>
     <view class="underline" mark:url="https://tw.icebreaker.top" bind:tap="copy">
       https://tw.icebreaker.top
     </view>
-    <t-button>Btn</t-button>
+    <view>M: {{ theme }}</view>
+    <t-button>Btn1 {{ theme }}</t-button>
   </view>
 </view>
