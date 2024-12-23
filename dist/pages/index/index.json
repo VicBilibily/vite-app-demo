@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "初始模板",
+  "usingComponents": {
+    "navigationBar": "/components/navigationBar/navigationBar.json",
+    "t-button": "tdesign-miniprogram/button/button"
+  }
+}

@@ -1,7 +1,7 @@
 import type { App } from "weapp-vite/json";
 
 export default <App>{
-  pages: ["pages/index/index", "pages/logs/logs"],
+  pages: ["pages/index/index", "pages/logs/logs", "pages/new-page/new-page"],
   tabBar: {
     custom: true,
     color: "#000000",
