@@ -1,0 +1,8 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "wxml": "html"
+  },
+  "cSpell.words": [
+    "weapp"
+  ]
+}
